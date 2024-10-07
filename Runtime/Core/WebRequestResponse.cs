@@ -62,7 +62,7 @@ namespace JeffreyLanters.WebRequests.Core {
     /// Return the Web Request's response .
     /// </summary>
     /// <returns>The Web Request's response data.</returns>
-    public byte[] ByteData () {
+    public byte[] ByteData () {
       return this.webRequestResponseData;
     }
 

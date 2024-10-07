@@ -16,6 +16,11 @@ namespace JeffreyLanters.WebRequests.Core {
     private string webRequestResponseText = "";
 
     /// <summary>
+    /// The byte[] response from the web request.
+    /// </summary>
+    private byte[] webRequestResponseData;
+
+    /// <summary>
     /// The status code of the servers response.
     /// </summary>
     public int httpStatusCode { get; } = -1;
@@ -38,6 +43,7 @@ namespace JeffreyLanters.WebRequests.Core {
     /// <param name="webRequestHandler"></param>
     public WebRequestResponse (WebRequestHandler webRequestHandler) {
       this.webRequestResponseText = webRequestHandler.downloadHandler.text;
+      this.webRequestResponseData = webRequestHandler.downloadHandler.data;
       this.headers = Header.ManyFromDictionary (webRequestHandler.GetResponseHeaders ());
       this.httpStatusCode = (int)webRequestHandler.responseCode;
       if (HttpStatus.IsDefined (typeof (HttpStatus), this.httpStatusCode))

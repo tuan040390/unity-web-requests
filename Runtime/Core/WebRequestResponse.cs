@@ -59,6 +59,14 @@ namespace JeffreyLanters.WebRequests.Core {
     }
 
     /// <summary>
+    /// Return the Web Request's response .
+    /// </summary>
+    /// <returns>The Web Request's response data.</returns>
+    public byte[] ByteData () {
+      return this.webRequestResponseData;
+    }
+
+    /// <summary>
     /// Converts the Web Request's response text as a JSON Objects to a given
     /// data type.
     /// </summary>

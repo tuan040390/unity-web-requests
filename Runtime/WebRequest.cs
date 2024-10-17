@@ -33,6 +33,11 @@ namespace JeffreyLanters.WebRequests {
     public string characterSet = "utf-8";
 
     /// <summary>
+    /// The timeOut set to use when send request.
+    /// </summary>
+    public int timeOut = 0;
+
+    /// <summary>
     /// The raw body of the web request, this value will be stringified based on
     /// the content type and send as an encoded value. When no content type is
     /// specified, the body will be send as a string using plain/text.
@@ -106,6 +111,10 @@ namespace JeffreyLanters.WebRequests {
       var _webRequestHandler = new WebRequestHandler ();
       _webRequestHandler.url = QueryParameter.AppendManyToUrl (this.url, this.queryParameters);
       _webRequestHandler.method = this.method.ToString ().ToUpper ();
+      //Set Timeout For Web Request
+      if(timeOut > 0)
+        _webRequestHandler.timeout = timeOut;
+      else _webRequestHandler.timeout = 0;
       // Sets all of the headers of the request handler. Some Unity builds will
       // incorrectly set the HTTP Method, so an alternative override value will
       // be passed along as well. Then the custom headers will be appended.

@@ -10,6 +10,6 @@
   "changelogUrl": "https://github.com/jeffreylanters/unity-web-requests/releases",
   "licensesUrl": "https://github.com/jeffreylanters/unity-web-requests/blob/master/LICENSE.md",
   "dependencies": {
-    "com.unity.modules.unitywebrequest": ""
+    "com.unity.modules.unitywebrequest": "1.0.0"
   }
 }
